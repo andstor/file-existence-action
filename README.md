@@ -11,10 +11,10 @@ This is a GitHub Action to check for existence of files. It can be used for cond
 The following example [workflow step](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) will check for existence of the files: `package.json`, `LICENSE`, `README.md`, `foo` `bar`
 
 ```yml
-      - name: "Check file existence"
-        uses: andstor/file-existence-action@v1
-        with:
-          files: "package.json, LICENSE, README.md, foo, bar"
+- name: "Check file existence"
+  uses: andstor/file-existence-action@v1
+  with:
+    files: "package.json, LICENSE, README.md, foo, bar"
 ```
 
 ## Options ⚙️
