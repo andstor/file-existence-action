@@ -27,7 +27,7 @@ The following input variables options can/must be configured:
 |`allow_failure`|Optional|Makes the Action fail on missing files.|`false`|
 
 ## Outputs
-- `files_exists`: Outputs `'true'` if the file(s) exists, otherwise `'false'`.
+- `files_exists`: Outputs `true` if the file(s) exists, otherwise `false`.
 
 ## Example
 
