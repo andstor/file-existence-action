@@ -1,10 +1,20 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'File Existence'
+description: 'GitHub Action to check for file existence'
+author: 'André Storhaug'
+branding:
+  icon: 'file-text'  
+  color: 'green'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  files:
+    description: 'Comma separated string with paths to files and directories to check for existence.'
+    required: true
+  allow_failure:
+    description: 'Makes the Action fail on missing files.'
+    default: false
+    required: false
+outputs:
+  files_exists:
+    description: 'Wheter the file(s) exists or not.'
 runs:
   using: 'node12'
   main: 'dist/index.js'

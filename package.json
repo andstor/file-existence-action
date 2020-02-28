@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.0",
+  "name": "file-existence-action",
+  "version": "1.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "GitHub Action to check for file existence",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -11,25 +11,33 @@
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
+    "all": "npm run build && npm run format && npm run lint && npm run pack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/andstor/file-existence-action.git"
   },
   "keywords": [
     "actions",
-    "node",
-    "setup"
+    "file",
+    "existence",
+    "checker"
   ],
-  "author": "YourNameOrOrganization",
+  "author": {
+    "name": "André Storhaug",
+    "email": "andr3.storhaug@gmail.com",
+    "url": "https://github.com/andstor"
+  },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andstor/file-existence-action/issues"
+  },
   "dependencies": {
     "@actions/core": "^1.2.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.23",
-    "@types/node": "^12.7.12",
+    "@types/node": "^12.12.28",
     "@typescript-eslint/parser": "^2.8.0",
     "@zeit/ncc": "^0.20.5",
     "eslint": "^5.16.0",
