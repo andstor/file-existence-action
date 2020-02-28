@@ -115,7 +115,7 @@ function run() {
             }
             else {
                 core.info('🎉 All files exists');
-                core.setOutput('exists', 'true');
+                core.setOutput('files_exists', 'true');
             }
         }
         catch (error) {

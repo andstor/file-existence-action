@@ -39,7 +39,7 @@ async function run(): Promise<void> {
       core.setOutput('files_exists', 'false')
     } else {
       core.info('🎉 All files exists')
-      core.setOutput('exists', 'true')
+      core.setOutput('files_exists', 'true')
     }
   } catch (error) {
     core.setFailed(error.message)
