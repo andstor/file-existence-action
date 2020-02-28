@@ -50,7 +50,7 @@ jobs:
           files: "package.json, LICENSE, README.md"
 
       - name: File exists
-        if: steps.check_files.outputs.files_exists
+        if: steps.check_files.outputs.files_exists == 'true'
         # Only runs if all of the files exists
         run: echo All files exists!
 ```
