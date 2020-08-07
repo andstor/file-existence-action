@@ -1,4 +1,4 @@
-# file-existence-ation
+# file-existence-action
 
 > GitHub Action to check for file existence
 
