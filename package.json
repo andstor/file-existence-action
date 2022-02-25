@@ -1,6 +1,6 @@
 {
   "name": "file-existence-action",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "GitHub Action to check for file existence",
   "main": "lib/main.js",
@@ -10,8 +10,8 @@
     "format-check": "prettier --check **/*.ts",
     "lint": "eslint src/**/*.ts",
     "pack": "ncc build",
-    "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run pack"
+    "test": "mocha",
+    "all": "npm run build && npm run format && npm run lint && npm run pack && npm test"
   },
   "repository": {
     "type": "git",
@@ -33,21 +33,24 @@
     "url": "https://github.com/andstor/file-existence-action/issues"
   },
   "dependencies": {
-    "@actions/core": "^1.2.0"
+    "@actions/core": "^1.2.0",
+    "glob": "^7.2.0"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.23",
+    "@types/chai": "^4.3.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.0",
     "@types/node": "^12.12.28",
+    "@types/tmp": "^0.2.3",
     "@typescript-eslint/parser": "^2.8.0",
     "@zeit/ncc": "^0.20.5",
+    "chai": "^4.3.6",
     "eslint": "^5.16.0",
     "eslint-plugin-github": "^2.0.0",
-    "eslint-plugin-jest": "^22.21.0",
-    "jest": "^24.9.0",
-    "jest-circus": "^24.9.0",
     "js-yaml": "^3.13.1",
+    "mocha": "^9.2.1",
     "prettier": "^1.19.1",
-    "ts-jest": "^24.2.0",
+    "ts-node": "^10.5.0",
     "typescript": "^3.6.4"
   }
 }

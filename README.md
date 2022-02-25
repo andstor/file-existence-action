@@ -14,7 +14,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 - name: "Check file existence"
   uses: andstor/file-existence-action@v1
   with:
-    files: "package.json, LICENSE, README.md, foo, bar"
+    files: "package.json, LICENSE, README.md, foo, *.txt"
 ```
 
 ## Options ⚙️
@@ -23,7 +23,9 @@ The following input variables options can/must be configured:
 
 |Input variable|Necessity|Description|Default|
 |----|----|----|----|
-|`files`|Required|Comma separated string with paths to files and directories to check for existence.||
+|`files`|Required|Comma separated string with paths to files and directories to check for existence. Supports [glob paterns](https://github.com/isaacs/node-glob).||
+|`ignore_case`|Optional|Ignore if a file name has upper or lower cases.|`true`|
+|`follow_symbolic_links`|Optional|Indicates whether to follow symbolic links.|`true`|
 |`allow_failure`|Optional|Makes the Action fail on missing files.|`false`|
 
 ## Outputs

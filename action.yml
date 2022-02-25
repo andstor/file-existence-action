@@ -8,6 +8,14 @@ inputs:
   files:
     description: 'Comma separated string with paths to files and directories to check for existence.'
     required: true
+  ignore_case:
+    description: 'Ignore if a file has upper or lower cases.'
+    default: false
+    required: false
+  follow_symbolic_links:
+    description: 'Indicates whether to follow symbolic links.'
+    default: true
+    required: false
   allow_failure:
     description: 'Makes the Action fail on missing files.'
     default: false
