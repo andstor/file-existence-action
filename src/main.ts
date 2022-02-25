@@ -1,13 +1,22 @@
 import * as core from '@actions/core'
-import fs from 'fs'
+import glob from 'glob'
 
-async function checkExistence(path: string): Promise<boolean> {
-  try {
-    await fs.promises.access(path)
-  } catch (error) {
-    return false
+export async function checkExistence(pattern: string): Promise<boolean> {
+  const globOptions = {
+    follow: !(
+      (core.getInput('follow_symlinks') || 'true').toUpperCase() === 'FALSE'
+    ),
+    nocase: (core.getInput('ignore_case') || 'false').toUpperCase() === 'TRUE'
   }
-  return true
+  return new Promise((resolve, reject) => {
+    glob(pattern, globOptions, (err: unknown, files: string[]) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(files.length > 0)
+      }
+    })
+  })
 }
 
 async function run(): Promise<void> {
@@ -42,6 +51,9 @@ async function run(): Promise<void> {
       core.setOutput('files_exists', 'true')
     }
   } catch (error) {
+    if (!(error instanceof Error)) {
+      throw error
+    }
     core.setFailed(error.message)
   }
 }
