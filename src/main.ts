@@ -32,13 +32,13 @@ async function run(): Promise<void> {
 
     if (missingFiles.length > 0) {
       if (failure) {
-        core.setFailed(`These files doesn't exist: ${missingFiles.join(', ')}`)
+        core.setFailed(`These files don't exist: ${missingFiles.join(', ')}`)
       } else {
-        core.info(`These files doesn't exist: ${missingFiles.join(', ')}`)
+        core.info(`These files don't exist: ${missingFiles.join(', ')}`)
       }
       core.setOutput('files_exists', 'false')
     } else {
-      core.info('🎉 All files exists')
+      core.info('🎉 All files exist')
       core.setOutput('files_exists', 'true')
     }
   } catch (error) {
