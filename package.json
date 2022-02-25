@@ -1,6 +1,6 @@
 {
   "name": "file-existence-action",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "GitHub Action to check for file existence",
   "main": "lib/main.js",
