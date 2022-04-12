@@ -44,7 +44,7 @@
     "@types/node": "^16.10.5",
     "@types/tmp": "^0.2.3",
     "@typescript-eslint/parser": "^5.8.1",
-    "@vercel/ncc": "^0.31.1",
+    "@vercel/ncc": "^0.33.4",
     "@zeit/ncc": "^0.20.5",
     "chai": "^4.3.6",
     "eslint": "^7.32.0",
