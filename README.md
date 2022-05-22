@@ -43,15 +43,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
-      - name: Check file existence
+      - name: Check file(s) existence
         id: check_files
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v1.1.0
         with:
           files: "package.json, LICENSE, README.md"
 
-      - name: File exists
+      - name: File(s) exists
         if: steps.check_files.outputs.files_exists == 'true'
         # Only runs if all of the files exists
         run: echo All files exists!
