@@ -22,8 +22,16 @@ export async function checkExistence(pattern: string): Promise<boolean> {
 async function run(): Promise<void> {
   try {
     const files: string = core.getInput('files', {required: true})
-    const failure: boolean =
+    const allow_failure: boolean =
       (core.getInput('allow_failure') || 'false').toUpperCase() === 'TRUE'
+    if (core.getInput('allow_failure')) {
+      core.warning(
+        `❗The "allow_failure" variable is deprecated in favor of "fail"`
+      )
+    }
+    const failure: boolean =
+      (core.getInput('failure') || 'false').toUpperCase() === 'TRUE' ||
+      allow_failure
     const fileList: string[] = files
       .split(',')
       .map((item: string) => item.trim())

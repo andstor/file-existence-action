@@ -26,7 +26,7 @@ The following input variables options can/must be configured:
 |`files`|Required|Comma separated string with paths to files and directories to check for existence. Supports [glob paterns](https://github.com/isaacs/node-glob).||
 |`ignore_case`|Optional|Ignore if a file name has upper or lower cases.|`true`|
 |`follow_symbolic_links`|Optional|Indicates whether to follow symbolic links.|`true`|
-|`allow_failure`|Optional|Makes the Action fail on missing files.|`false`|
+|`fail`|Optional|Makes the Action fail on missing files.|`false`|
 
 ## Outputs
 - `files_exists`: Outputs `true` if the file(s) exists, otherwise `false`.

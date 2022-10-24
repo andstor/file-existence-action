@@ -16,9 +16,12 @@ inputs:
     description: 'Indicates whether to follow symbolic links.'
     default: true
     required: false
-  allow_failure:
+  fail:
     description: 'Makes the Action fail on missing files.'
     default: false
+    required: false
+  allow_failure:
+    description: 'This variable is deprecated in favour of "fail".'
     required: false
 outputs:
   files_exists:

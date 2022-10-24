@@ -68,7 +68,11 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const files = core.getInput('files', { required: true });
-            const failure = (core.getInput('allow_failure') || 'false').toUpperCase() === 'TRUE';
+            const allow_failure = (core.getInput('allow_failure') || 'false').toUpperCase() === 'TRUE';
+            if (core.getInput('allow_failure')) {
+                core.warning(`❗The "allow_failure" variable is deprecated in favor of "fail"`);
+            }
+            const failure = ((core.getInput('failure') || 'false').toUpperCase() === 'TRUE') || allow_failure;
             const fileList = files
                 .split(',')
                 .map((item) => item.trim());
