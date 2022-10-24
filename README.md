@@ -4,7 +4,7 @@
 
 ![build-test](https://github.com/andstor/file-existence-action/workflows/build/badge.svg)
 
-This is a GitHub Action to check for existence of files. It can be used for conditionally running workflow steps based on file(s) existence. 
+This is a GitHub Action to check for the existence of files. It can be used for conditionally running workflow steps based on file(s) existence. 
 
 ## Usage
 
@@ -12,7 +12,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ```yml
 - name: "Check file existence"
-  uses: andstor/file-existence-action@v1
+  uses: andstor/file-existence-action@v2
   with:
     files: "package.json, LICENSE, README.md, foo, *.txt"
 ```
@@ -43,11 +43,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Check file existence
         id: check_files
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v2
         with:
           files: "package.json, LICENSE, README.md"
 
