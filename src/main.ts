@@ -30,7 +30,7 @@ async function run(): Promise<void> {
       )
     }
     const failure: boolean =
-      (core.getInput('failure') || 'false').toUpperCase() === 'TRUE' ||
+      (core.getInput('fail') || 'false').toUpperCase() === 'TRUE' ||
       allow_failure
     const fileList: string[] = files
       .split(',')

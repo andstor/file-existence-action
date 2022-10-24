@@ -72,7 +72,8 @@ function run() {
             if (core.getInput('allow_failure')) {
                 core.warning(`❗The "allow_failure" variable is deprecated in favor of "fail"`);
             }
-            const failure = ((core.getInput('failure') || 'false').toUpperCase() === 'TRUE') || allow_failure;
+            const failure = (core.getInput('fail') || 'false').toUpperCase() === 'TRUE' ||
+                allow_failure;
             const fileList = files
                 .split(',')
                 .map((item) => item.trim());
