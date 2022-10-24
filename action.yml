@@ -22,7 +22,7 @@ inputs:
     required: false
 outputs:
   files_exists:
-    description: 'Wheter the file(s) exists or not.'
+    description: 'Whether the file(s) exists or not.'
 runs:
   using: 'node16'
   main: 'dist/index.js'
