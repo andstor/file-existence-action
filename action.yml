@@ -2,7 +2,7 @@ name: 'File Existence'
 description: 'GitHub Action to check for file existence'
 author: 'André Storhaug'
 branding:
-  icon: 'file-text'  
+  icon: 'file-text'
   color: 'green'
 inputs:
   files:
@@ -27,5 +27,5 @@ outputs:
   files_exists:
     description: 'Whether the file(s) exists or not.'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
