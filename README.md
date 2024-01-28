@@ -12,7 +12,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ```yml
 - name: "Check file existence"
-  uses: andstor/file-existence-action@v2
+  uses: andstor/file-existence-action@v3
   with:
     files: "package.json, LICENSE, README.md, foo, *.txt"
 ```
@@ -47,7 +47,7 @@ jobs:
 
       - name: Check file existence
         id: check_files
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@v3
         with:
           files: "package.json, LICENSE, README.md"
 
