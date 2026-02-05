@@ -32,6 +32,8 @@ async function run(): Promise<void> {
     const failure: boolean =
       (core.getInput('fail') || 'false').toUpperCase() === 'TRUE' ||
       allow_failure
+    const verbose: boolean =
+      (core.getInput('verbose') || 'false').toUpperCase() === 'TRUE'
     const fileList: string[] = files
       .split(',')
       .map((item: string) => item.trim())
@@ -50,12 +52,14 @@ async function run(): Promise<void> {
     if (missingFiles.length > 0) {
       if (failure) {
         core.setFailed(`These files don't exist: ${missingFiles.join(', ')}`)
-      } else {
+      } else if (verbose) {
         core.info(`These files don't exist: ${missingFiles.join(', ')}`)
       }
       core.setOutput('files_exists', 'false')
     } else {
-      core.info('🎉 All files exist')
+      if (verbose) {
+        core.info('🎉 All files exist')
+      }
       core.setOutput('files_exists', 'true')
     }
   } catch (error) {

@@ -23,6 +23,10 @@ inputs:
   allow_failure:
     description: 'This variable is deprecated in favour of "fail".'
     required: false
+  verbose:
+    description: 'Make action verbose.'
+    default: 'false'
+    required: false
 outputs:
   files_exists:
     description: 'Whether the file(s) exists or not.'

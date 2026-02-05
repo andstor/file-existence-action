@@ -27,6 +27,7 @@ The following input variables options can/must be configured:
 |`ignore_case`|Optional|Ignore if a file name has upper or lower cases.|`true`|
 |`follow_symbolic_links`|Optional|Indicates whether to follow symbolic links.|`true`|
 |`fail`|Optional|Makes the Action fail on missing files.|`false`|
+|`verbose`|Optional|Displays file existence messages.|`false`|
 
 ## Outputs
 - `files_exists`: Outputs `true` if the file(s) exists, otherwise `false`.
