@@ -1,6 +1,6 @@
 import {expect} from 'chai'
-import {checkExistence} from '../src/main'
-import {folderIsInsensitive} from '../src/utils'
+import {checkExistence} from '../src/main.ts'
+import {folderIsInsensitive} from '../src/utils.ts'
 
 function setEnv(name: string, value: string): void {
   process.env[`INPUT_${name.replace(/ /g, '_').toUpperCase()}`] = value

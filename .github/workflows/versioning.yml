@@ -1,4 +1,6 @@
 name: Update version tag
+permissions:
+  contents: read
 
 on:
   release:
