@@ -1,5 +1,5 @@
 module.exports = {
-  extension: ['js', 'jsx', 'ts', 'tsx'],
-  spec: ['test/**.{js,ts,jsx,tsx}'],
-  require: 'ts-node/register'
-};
+  extension: ['ts', 'js'],
+  spec: ['test/**/*.test.ts'],
+  require: 'ts-node/register', // optional if you want on-the-fly TS compilation
+}

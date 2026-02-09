@@ -31,5 +31,5 @@ outputs:
   files_exists:
     description: 'Whether the file(s) exists or not.'
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'

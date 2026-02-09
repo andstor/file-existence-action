@@ -1,5 +1,5 @@
 import * as core from '@actions/core'
-import glob from 'glob'
+import {glob} from 'glob'
 
 export async function checkExistence(pattern: string): Promise<boolean> {
   const globOptions = {
@@ -8,15 +8,8 @@ export async function checkExistence(pattern: string): Promise<boolean> {
     ),
     nocase: (core.getInput('ignore_case') || 'false').toUpperCase() === 'TRUE'
   }
-  return new Promise((resolve, reject) => {
-    glob(pattern, globOptions, (err: unknown, files: string[]) => {
-      if (err) {
-        reject(err)
-      } else {
-        resolve(files.length > 0)
-      }
-    })
-  })
+  const files = await glob(pattern, globOptions)
+  return files.length > 0
 }
 
 async function run(): Promise<void> {
