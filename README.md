@@ -8,7 +8,7 @@ This is a GitHub Action to check for the existence of files. It can be used for 
 
 ## Usage
 
-The following example [workflow step](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) will check for existence of the files: `package.json`, `LICENSE`, `README.md`, `foo` `bar`
+The following example workflow step will check for existence of the files: `package.json`, `LICENSE`, `README.md`, `foo` `bar`
 
 ```yml
 - name: "Check file existence"
